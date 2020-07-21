@@ -21,7 +21,7 @@ function GarageDoorOpener(log, config) {
     this.invertSensorState = defaultVal(config['invertSensorState'], false);
 	this.default = defaultVal(config["default_state"], false);
 	this.duration = defaultVal(config["duration_ms"], 0);
-    this.doorState = 1;
+    this.doorState = 0;
 	this.sensorChange = 0;
 	this.service = null;
 
