@@ -30,7 +30,7 @@ function GarageDoorOpener(log, config) {
 	if (!is_int(this.duration)) throw new Error("The config value 'duration' must be an integer number of milliseconds.");
 
     this.log("Creating a garage door relay named '%s', initial state: %s", this.name, (this.invertDoorState ? "OPEN" : "CLOSED"));
-    rpio.open(this.doorRelayPin, rpio.OUTPUT, true);
+    rpio.open(this.doorRelayPin, rpio.OUTPUT, this.gpioDoorVal(this.invertDoorState));
 	rpio.open(this.doorSensorPin, rpio.OUTPUT, this.gpioSensorVal(this.invertSensorState));
 	this.checkSensor(e => {});
 }
